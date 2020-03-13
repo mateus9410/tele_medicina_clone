@@ -1,0 +1,85 @@
+#Package Name
+name: sigamed_tele_medicina
+
+#App Version
+description: A new Flutter application.
+
+#App Version
+version: 0.0.1
+
+#SDK Version
+environment:
+  sdk: ">=2.2.0 <3.0.0"
+
+#Flutter Dependencies
+dependencies:
+  flutter:
+    sdk: flutter
+
+  #UI
+  cupertino_icons: ^0.1.2
+  font_awesome_flutter: ^8.5.0
+  pdf_render: ^0.57.1
+
+  #Model
+  moor_flutter: ^2.0.0
+
+  #REST API Handler
+
+  #State Management
+  flutter_bloc: ^3.1.0
+
+  #Utils
+  equatable: ^1.0.0
+  sailor: ^0.6.0
+  flutter_form_builder: ^3.8.0+1
+  permission_handler: ^4.2.0+hotfix.3
+  path_provider: ^1.6.0
+  file_picker: ^1.4.3+2
+  image_picker: ^0.6.3+1
+  flushbar: ^1.9.1
+
+  #Localization
+  flutter_localizations:
+    sdk: flutter
+
+#Developer Dependencies
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner:
+  flutter_native_splash: ^0.1.9
+  moor_generator: ^2.0.0
+
+#Dependency Overrides
+dependency_overrides:
+  #Necessary because 'flutter_form_builder 3.8.0+1' depends on 'intl 0.16.1'
+  #whilst 'flutter_localizations' from 'sdk' depends on 'intl 0.16.0'
+  intl: ^0.16.1
+
+
+##############
+# Problematic but necessary plugin
+##############
+file_picker:
+  git:
+    url: git://github.com/Boehrsi/plugins_flutter_file_picker
+    ref: 192_embeddingV2
+
+
+#Flutter Splash Screen
+flutter_native_splash:
+  image: images/logo_bw_medium.png
+  color: "1976D2"
+
+#Assets
+flutter:
+
+  uses-material-design: true
+  assets:
+    - images/
+
+  fonts:
+    - family: HelveticaNeue
+      fonts:
+        - asset: fonts/Helvetica-Neue.ttf
