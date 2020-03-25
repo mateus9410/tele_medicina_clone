@@ -33,7 +33,7 @@ class _TopScreenFileRegistrationState extends State<TopScreenFileRegistration> {
   static const _pdfScale = 100.0 / 72.0;
 
   void _selectImage() async {
-    _selectedFile = await FilePicker.getFile(type: FileType.IMAGE);
+    _selectedFile = await FilePicker.getFile(type: FileType.image);
 
     if (_selectedFile == null)
       Routes.sailor.pop();
@@ -42,7 +42,7 @@ class _TopScreenFileRegistrationState extends State<TopScreenFileRegistration> {
 
   void _selectPdf() async {
     _selectedFile =
-        await FilePicker.getFile(type: FileType.CUSTOM, fileExtension: 'pdf');
+        await FilePicker.getFile(type: FileType.custom, fileExtension: 'pdf');
 
     if (_selectedFile == null)
       Routes.sailor.pop();

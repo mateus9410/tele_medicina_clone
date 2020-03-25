@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sigamed_tele_medicina/screens/home_screen/home_screen.dart';
+import 'package:sigamed_tele_medicina/screens/login_screen/login_reset.dart';
 import 'package:sigamed_tele_medicina/screens/login_screen/login_screen_button.dart';
 import 'package:sigamed_tele_medicina/screens/login_screen/login_screen_field.dart';
+import 'package:sigamed_tele_medicina/signup/signup_screen.dart';
 import 'package:sigamed_tele_medicina/utilities/clip_paths.dart';
 import 'package:sigamed_tele_medicina/utilities/constants.dart';
 import 'package:sigamed_tele_medicina/utilities/global_keys.dart';
@@ -45,6 +47,32 @@ class LoginScreen extends StatelessWidget {
                   icon: Icons.lock_outline,
                   obscureText: true,
                 ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                          builder: (context) => ResetPasswordPage(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'Recuperar senha',
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: Colors.blue,
+                            fontSize: 16,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
                 SizedBox(height: wp(8.0)),
                 LoginScreenButton(
                   title: 'Login',
@@ -68,15 +96,32 @@ class LoginScreen extends StatelessWidget {
                 //
                 //Registration Button
                 //
-                Container(
-                    width: double.maxFinite,
-                    margin: EdgeInsets.only(left: wp(5.0), right: wp(5.0)),
-                    child: FlatButton(
-                      child: Text('Ainda não possui conta?'.toUpperCase(),
-                          style: TextStyle(color: kSigaMed)),
-                      onPressed: () => print('Registration clicked'),
-                    )
-                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const Text(
+                        'Não tem uma conta? ',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => SignUpScreen()));
+                        },
+                        child: Text(
+                          'Cadastre-se',
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: Colors.blue,
+                            fontSize: 16,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           ),

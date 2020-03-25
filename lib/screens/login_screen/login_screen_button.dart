@@ -47,7 +47,7 @@ class LoginScreenButton extends StatelessWidget {
                 ),
               ),
               Container(
-                width: wp(20.0),
+                width: wp(12.0),
                 margin: EdgeInsets.only(
                     right: wp(2.0),
                     top: wp(2.0),
